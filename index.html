@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>fa9eel Products</title>
-  <link rel="stylesheet" href="styles.css" />
-
+  <title>Zulfe - Premium Hair Care Products</title>
+  
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9VL0XZYF7"></script>
   <script>
@@ -14,36 +13,511 @@
     gtag('js', new Date());
     gtag('config', 'G-B9VL0XZYF7');
   </script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      color: #333;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .brand-name {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: rgba(255,255,255,0.9);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .product-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    }
+
+    .image-wrapper {
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto 1.5rem;
+      border-radius: 15px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 1rem;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.05);
+    }
+
+    .product-title {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      color: #2d3748;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .product-description {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      line-height: 1.8;
+      color: #4a5568;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .buy-button {
+      display: block;
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      letter-spacing: 0.5px;
+    }
+
+    .buy-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+
+    .buy-button:active {
+      transform: translateY(0);
+    }
+
+    .coming-soon {
+      background: linear-gradient(135deg, #a8a8a8 0%, #8b8b8b 100%);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .coming-soon:hover {
+      transform: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #a8a8a8 0%, #8b8b8b 100%);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #48bb78;
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .coming-soon-badge {
+      background: #ed8936;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .header {
+        margin-bottom: 2rem;
+      }
+
+      .products-grid {
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        padding: 1.5rem;
+      }
+
+      .image-wrapper {
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .social-section {
+      margin-top: 4rem;
+      padding: 3rem 1rem;
+      animation: fadeInUp 1s ease-out;
+      animation-delay: 0.4s;
+      animation-fill-mode: both;
+    }
+
+    .social-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .social-title {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .social-subtitle {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .social-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .instagram-card {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .instagram-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .instagram-card:hover::before {
+      opacity: 1;
+    }
+
+    .instagram-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(188, 24, 136, 0.5);
+    }
+
+    .instagram-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .instagram-card:hover .instagram-icon {
+      background: rgba(255,255,255,0.3);
+      transform: rotate(360deg) scale(1.1);
+    }
+
+    .instagram-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      text-align: center;
+    }
+
+    .instagram-handle {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .instagram-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    .youtube-card {
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .youtube-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .youtube-card:hover::before {
+      opacity: 1;
+    }
+
+    .youtube-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(255, 0, 0, 0.5);
+    }
+
+    .youtube-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .youtube-card:hover .youtube-icon {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.1);
+    }
+
+    .youtube-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      text-align: center;
+    }
+
+    .youtube-handle {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .youtube-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    @media (max-width: 640px) {
+      .social-section {
+        margin-top: 3rem;
+        padding: 2rem 0.75rem;
+      }
+
+      .social-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .instagram-card {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  
+  <header class="header">
+    <h1 class="brand-name">Zulfé</h1>
+    <p class="tagline">Premium Hair Care Products</p>
+  </header>
 
-  <!-- Sea Salt Spray -->
-  <div class="container">
-    <div class="card">
-      <img src="bottle.png" alt="fa9eel Sea Salt Spray">
-    </div>
-    <h1>fa9eel - Sea Salt Spray</h1>
-    <p>
-      Barber-formulated. Sea-salt infused. <br />
-      Designed for texture, volume, and matte finish. <br />
-      Clean ingredients. Minimal fuss. Maximum style.
-    </p>
-    <a class="buy-button" href="https://a.co/d/cFaEaFA" target="_blank">Buy on Amazon</a>
-  </div>
+  <main class="products-grid">
+    
+    <!-- Sea Salt Spray -->
+    <article class="product-card">
+      <div style="text-align: center;">
+        <span class="badge">Available Now</span>
+      </div>
+      <div class="image-wrapper">
+        <img src="bottle.png" alt="fa9eel Sea Salt Spray" class="product-image">
+      </div>
+      <h2 class="product-title">Sea Salt Spray</h2>
+      <p class="product-description">
+        Barber-formulated. Sea-salt infused.<br />
+        Designed for texture, volume, and matte finish.<br />
+        Clean ingredients. Minimal fuss. Maximum style.
+      </p>
+      <a class="buy-button" href="https://a.co/d/cFaEaFA" target="_blank" rel="noopener noreferrer">
+        Buy on Amazon
+      </a>
+    </article>
 
-  <!-- Hair Wax -->
-  <div class="container">
-    <div class="card">
-      <img src="hairwax.png" alt="fa9eel Hair Wax">
+    <!-- Hair Wax -->
+    <article class="product-card">
+      <div style="text-align: center;">
+        <span class="badge coming-soon-badge">Coming Soon</span>
+      </div>
+      <div class="image-wrapper">
+        <img src="hairwax.png" alt="fa9eel Hair Wax" class="product-image">
+      </div>
+      <h2 class="product-title">Hair Wax</h2>
+      <p class="product-description">
+        Enriched with black seed oil and beeswax.<br />
+        Provides a firm hold and natural shine.<br />
+        Inspired by prophetic tradition. Clean. Strong. Classic.
+      </p>
+      <a class="buy-button coming-soon" href="#" onclick="return false;">
+        Coming Soon
+      </a>
+    </article>
+
+  </main>
+
+  <footer class="social-section">
+    <div class="social-container">
+      <h3 class="social-title">Follow My Journey</h3>
+      <p class="social-subtitle">Connect with me on Instagram</p>
+      
+      <div class="social-links">
+        <a href="https://instagram.com/fa9eelh" target="_blank" rel="noopener noreferrer" class="instagram-card">
+          <div class="instagram-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="instagram-content">
+            <span class="instagram-handle">@fa9eelh</span>
+            <span class="instagram-label">Main Account</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/zulfebyfazeel" target="_blank" rel="noopener noreferrer" class="instagram-card">
+          <div class="instagram-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="instagram-content">
+            <span class="instagram-handle">@zulfebyfazeel</span>
+            <span class="instagram-label">Second Account</span>
+          </div>
+        </a>
+
+        <a href="https://youtube.com/@fa9eelh" target="_blank" rel="noopener noreferrer" class="youtube-card">
+          <div class="youtube-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="youtube-content">
+            <span class="youtube-handle">@fa9eelh</span>
+            <span class="youtube-label">YouTube Videos</span>
+          </div>
+        </a>
+      </div>
     </div>
-    <h1>fa9eel - Hair Wax</h1>
-    <p>
-      Enriched with black seed oil and beeswax. <br />
-      Provides a firm hold and natural shine. <br />
-      Inspired by prophetic tradition. Clean. Strong. Classic.
-    </p>
-    <a class="buy-button" href="https://a.co/d/coming_soon!" target="_blank">COMING SOON</a>
-  </div>
+  </footer>
 
 </body>
 </html>
